@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       .btnPopup{
+           background-color: orange;
+           padding: 15px;
+           font-size: 14px;
+           color: black;
+           cursor: pointer;
+       }
+       .btnPopup:hover{
+           background-color: orchid;
+       }
+       .overlay{
+           position: fixed;
+           left: 0;
+           top: 0;
+           background-color: grey;
+           ;
+           background-color: rgba(0, 0,0, 0.5);
+           width: 100%;
+           height: 100%;
+           /* display: none; */
+
+       }
+       .popup{
+           margin: 20% auto;
+           width: 70%;
+           background-color: white;
+           border-radius: 5px;
+           box-shadow: 15px 20px 0 rgba(0, 0,0, 0.5);
+           padding: 1em ;
+       }
+       .bntclose{
+           float: right;
+           cursor: pointer;
+       }
+
+     
+    </style>
+    <title>Document</title>
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    
+   <button id="btnPopup" class="btnPopup">Afficher popup</button>
+   <div id="overlay" class="overlay">
+       <div id="popup" class="popup">
+           <h2>Exemple simple de popup <span id="bntclose" class="bntclose">&times;</span></h2>
+           <p>
+            Il est très fortement déconseillé d'essayer d'exécuter la fonction "alert()" dans un événement 
+            'mousemove' ou bien vous allez rapidement être submergés de fenêtres !
+               
+           </p>
+
+       </div>
+
+   </div>
+
+    <script>
+        var btnPopup=document.getElementById('btnPopup');
+        var overlay=document.getElementById('overlay');
+        var btnclose=document.getElementById('bntclose');
+
+        btnPopup.addEventListener('click', openmodal);
+        function openmodal(){
+            overlay.style.display='block';
+        }
+        btnclose.addEventListener('click' , closepop);
+        function closepop(){
+            overlay.style.display='none';
+        }
+
+
+
+
+
+        // var body=document.body;
+        // var div1 = document.getElementById('div1');
+        // var p1 = document.getElementById('p1');
+        
+        // var strong=document.querySelector('strong');
+        // // var div2 = document.getElementById('div2');
+        // // var p2 = document.getElementById('p2');
+        // p1.addEventListener('click',messagediv1,true);
+        // strong.addEventListener('click', messagep1,true);
+        
+        // function messagediv1()
+        // {
+        //     alert('capture paragraph');
+        // }
+
+        // function messagep1()
+        // {
+        //     alert('capture stronge');
+        // }
+        // div1.addEventListener('click',messagediv2);
+        // body.addEventListener('click', messagep2);
+        // function messagediv2()
+        // {
+        //     alert('bouillenement div');
+        // }
+
+        // function messagep2()
+        // {
+        //     alert('bouillnement body');
+        // }
+        // var div1 = document.getElementById('div1');
+        // var p1 = document.getElementById('p1');
+        // div1.addEventListener('click',message);
+        // // function message(event){
+        // //     this.innerHTML='element declenchzur :'+ event.target + '<br> element portant levenement : ' + event.currentTarget ;
+        // // }
+        // function message(event){
+        //     this.innerHTML='element declenchzur :'+ event.type;
+        // }
+
+
+
+
+
+    </script>
+ </body>
+</html>
